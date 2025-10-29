@@ -3,12 +3,15 @@ import { useTheme } from "../../../core/hooks/theme/useTheme";
 // icons
 import { TiWeatherSunny } from "react-icons/ti";
 import { FaMoon } from "react-icons/fa6";
+import { useDispatch } from "react-redux";
+import { toggleTheme } from "../../../redux/slices/ChangeTheme";
 
 const DarkModeButton = () => {
-  const { theme, setTheme } = useTheme();
+  const dispatch = useDispatch();
+  const theme = useTheme();
   return (
     <Button
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+      onClick={() => dispatch(toggleTheme())}
       isIconOnly
       aria-label="switch the mood"
       variant="flat"
