@@ -1,9 +1,7 @@
-import type React from "react"
+import type React from "react";
+import { HeroUIProvider } from "@heroui/react";
+const ProviderApp = ({ children }: { children: React.ReactNode }) => {
+  return <HeroUIProvider> {children}</HeroUIProvider>;
+};
 
-const ProviderApp = ({children} : {children : React.ReactNode}) => {
-  return (
-    <>{children}</>
-  )
-}
-
-export default ProviderApp
+export default ProviderApp;
