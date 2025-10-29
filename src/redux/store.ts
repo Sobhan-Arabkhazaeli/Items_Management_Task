@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import themeReducer from "./slices/ChangeTheme";
+import productParamsReducer from "./slices/ProductsParams";
 
 export const store = configureStore({
   reducer: {
     theme: themeReducer,
+    params : productParamsReducer
   },
 });
 
