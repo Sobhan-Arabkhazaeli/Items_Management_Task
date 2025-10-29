@@ -30,13 +30,16 @@ body {
 [data-theme="dark"] {
   --bg: #0b1220;
   --text: #fbfcfe;
-  --text-secondary: #707070;
+  --text-secondary: #a1a1a1;
   --primary: #48494a;
   --surface: #FF5A5A;
 }
 
 h1{
-  @apply text-text font-medium text-lg
+  @apply text-text font-bold text-lg 
+}
+p{
+  @apply text-text-secondary text-sm
 }
 
 /* custom classes using layer utilities */
@@ -44,4 +47,33 @@ h1{
   .chip-primary {
     @apply p-1.5 bg-primary flex items-center rounded-3xl;
   }
+
+  /* Light Mode */
+.card {
+  background: linear-gradient(145deg, #f6f6f6a7, #ffffffb1);
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1), -3px -3px 8px rgba(255, 255, 255, 0.2);
+  transition: 1s;
 }
+
+.card:hover {
+  background: linear-gradient(145deg, #ffffffb6, #f1f1f1b9);
+  box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.2), -3px -3px 12px rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+  /* Dark Mode */
+.dark .card {
+  background: linear-gradient(145deg, #2c3e50b9, #475563b6);
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.6), -3px -3px 8px rgba(255, 255, 255, 0.1);
+  transition: 1s;
+}
+
+.dark .card:hover {
+  background: linear-gradient(145deg, #34495eba, #2c3e50b6);
+  box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.8), -3px -3px 12px rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+
+}
+}
+
+
