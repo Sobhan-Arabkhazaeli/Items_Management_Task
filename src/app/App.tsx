@@ -1,12 +1,9 @@
-import './App.css'
+// ** Third Party Components
+import { RouterProvider as ReactRouterProvider } from "react-router-dom";
+import { MainRoutes } from "../config/router/MainRoute";
 
 function App() {
-
-  return (
-    <>
-      <h1>start project</h1>
-    </>
-  )
+  return  <ReactRouterProvider router={MainRoutes} />;
 }
 
 export default App
