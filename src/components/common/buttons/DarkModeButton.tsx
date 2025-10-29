@@ -12,14 +12,14 @@ const DarkModeButton = () => {
       isIconOnly
       aria-label="switch the mood"
       variant="flat"
-      size="md"
+      size="lg"
       radius="full"
       className="bg-primary p-1"
     >
       {theme === "dark" ? (
-        <TiWeatherSunny color="#fff" />
+        <TiWeatherSunny color="#fff" aria-label="switch to light" />
       ) : (
-        <FaMoon color="#000" />
+        <FaMoon color="#000" aria-label="switch to dark" />
       )}
     </Button>
   );

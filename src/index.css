@@ -1,30 +1,7 @@
 @import "tailwindcss";
 @plugin '../hero.ts';
 @source '../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}';
-
-@theme {
-  --color-bg: var(--bg);
-  --color-text: var(--text);
-  --color-text: var(--text-secondary);
-  --color-primary: var(--primary);
-  --color-surface: var(--surface);
-}
-
-:root {
-  --bg: #ffffff;
-  --text: #0f172a;
-  --text-secondary: #707070;
-  --primary: #e9e8e8;
-  --surface: #FF5A5A;
-}
-
-[data-theme="dark"] {
-  --bg: #0b1220;
-  --text: #e2e8f0;
-  --text-secondary: #707070;
-  --primary: #48494a;
-  --surface: #FF5A5A;
-}
+@tailwind utilities;
 
 body {
   margin: 0;
@@ -32,4 +9,39 @@ body {
   /* place-items: center; */
   min-width: 320px;
   min-height: 100vh;
+}
+
+/* custom colors for multi-theme */
+@theme {
+  --color-bg: var(--bg);
+  --color-text: var(--text);
+  --color-text-secondary: var(--text-secondary);
+  --color-primary: var(--primary);
+  --color-surface: var(--surface);
+}
+:root {
+  --bg: #ffffff;
+  --text: #000;
+  --text-secondary: #707070;
+  --primary: #e9e8e8;
+  --surface: #FF5A5A;
+}
+
+[data-theme="dark"] {
+  --bg: #0b1220;
+  --text: #fbfcfe;
+  --text-secondary: #707070;
+  --primary: #48494a;
+  --surface: #FF5A5A;
+}
+
+h1{
+  @apply text-text font-medium text-lg
+}
+
+/* custom classes using layer utilities */
+@layer utilities {
+  .chip-primary {
+    @apply p-1.5 bg-primary flex items-center rounded-3xl;
+  }
 }
