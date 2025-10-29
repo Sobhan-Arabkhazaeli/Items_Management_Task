@@ -10,7 +10,7 @@ const instance: AxiosInstance = axios.create({
 
 // Success handler: returns only the response data
 const onSuccess = <T>(response: AxiosResponse<T>): T => {
-  return response.data;
+  return response;
 };
 
 // Error handler: alerts for client errors (4xx) and rejects the promise
