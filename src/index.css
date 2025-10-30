@@ -9,6 +9,11 @@ body {
   /* place-items: center; */
   min-width: 320px;
   min-height: 100vh;
+  overflow-x: hidden;
+}
+html, body {
+  overflow-x: hidden;
+
 }
 
 /* custom colors for multi-theme */

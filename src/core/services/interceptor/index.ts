@@ -19,7 +19,8 @@ const onError = (error: AxiosError): Promise<never> => {
     const status = error.response.status;
 
     if (status >= 400 && status < 500) {
-      alert(`Client Error: ${status}`);
+      console.log(`Client Error: ${status}`);
+      return Promise.reject(error);
     }
   } else {
     console.error("Network or CORS error", error.message);
@@ -31,3 +32,4 @@ const onError = (error: AxiosError): Promise<never> => {
 instance.interceptors.response.use(onSuccess, onError);
 
 export default instance;
+

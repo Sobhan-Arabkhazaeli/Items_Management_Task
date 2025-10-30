@@ -11,9 +11,9 @@ const MainLayout: FC = () => {
       <header>
         <HeaderSection />
       </header>
-      <main>
+      
         <Outlet />
-      </main>
+      
     </>
   );
 };

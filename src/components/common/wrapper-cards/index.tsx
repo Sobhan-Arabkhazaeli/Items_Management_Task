@@ -12,11 +12,12 @@ interface IProp {
 const WrapperCards: FC<IProp> = ({ usersData, isLoading, isError }) => {
 
   const containerStyles = "flex flex-wrap justify-around gap-5";
+  
 
   if (isLoading || usersData === undefined) {
     return (
       <div className={containerStyles}>
-        {[...Array(6)].map((_, index) => (
+        {[...Array(3)].map((_, index) => (
           <UserCard_Skeleton key={index} />
         ))}
       </div>
@@ -24,7 +25,7 @@ const WrapperCards: FC<IProp> = ({ usersData, isLoading, isError }) => {
   } else if (isError || usersData.length === 0) {
     return (
       <h1 className="text-center text-gray-500 text-lg mt-8">
-        User not found
+        no data products
       </h1>
     );
   } else {

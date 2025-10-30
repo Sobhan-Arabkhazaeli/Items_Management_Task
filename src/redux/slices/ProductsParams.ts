@@ -1,28 +1,17 @@
-// src/store/slices/productParams.slice.ts
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 import type { IProductsParams } from "../../core/types";
-
-/**
- * @description
- * Redux slice for managing product query parameters
- * used in API requests (search, sort, pagination, etc.)
- *
- *   Follows SOLID:
- * - Single Responsibility: Handles only query params logic.
- * - Open/Closed: Easy to extend if new filters are added.
- */
 
 // ---------- Initial State ----------
 const initialState: IProductsParams = {
   search: undefined,
   sortBy: undefined,
   page: 1,
-  limit: 10,
+  limit: 3,
 };
 
 // ---------- Slice Definition ----------
 const productParamsSlice = createSlice({
-  name: "productParams",
+  name: "params",
   initialState,
   reducers: {
     /**
@@ -50,8 +39,8 @@ const productParamsSlice = createSlice({
     },
 
     /**
-     * @desc Set sort key (e.g., "price", "title", etc.)
-     * @example dispatch(setSortBy("price"))
+     * @desc Set sort key (e.g.,"date", etc.)
+     * @example dispatch(setSortBy("date"))
      */
     setSortBy: (state, action: PayloadAction<IProductsParams["sortBy"]>) => {
       state.sortBy = action.payload;
@@ -70,6 +59,6 @@ export default productParamsSlice.reducer;
  * Type for selecting this slice from the Redux store.
  * Keeps store strongly typed.
  */
-export interface ProductParamsState {
-  productParams: IProductsParams;
+export interface IProductParamsState {
+  params: IProductsParams;
 }

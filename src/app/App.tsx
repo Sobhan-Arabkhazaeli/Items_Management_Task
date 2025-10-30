@@ -5,10 +5,10 @@ import ParticlesBackground from "../core/utils/Particles";
 
 function App() {
   return (
-    <main className="w-screen p-2 font-serif">
+    <div className="w-screen p-3 font-serif">
     <ParticlesBackground/>
     <ReactRouterProvider router={MainRoutes} />
-    </main>
+    </div>
   )
   
   
