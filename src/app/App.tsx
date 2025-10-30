@@ -1,12 +1,17 @@
-import './App.css'
+// ** Third Party Components
+import { RouterProvider as ReactRouterProvider } from "react-router-dom";
+import { MainRoutes } from "../config/router/MainRoute";
+import ParticlesBackground from "../core/utils/Particles";
 
 function App() {
-
   return (
-    <>
-      <h1>start project</h1>
-    </>
+    <div className="w-screen p-3 font-serif">
+    <ParticlesBackground/>
+    <ReactRouterProvider router={MainRoutes} />
+    </div>
   )
+  
+  
 }
 
 export default App
