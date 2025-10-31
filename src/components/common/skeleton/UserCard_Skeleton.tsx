@@ -2,13 +2,13 @@ import { Card, Skeleton } from "@heroui/react";
 
 const UserCard_Skeleton = () => {
   return (
-       <Card className="w-96 space-y-5 p-4" radius="lg">
+    <Card className="w-[400px] space-y-6 p-4" radius="lg">
       <Skeleton className="rounded-lg">
-        <div className="h-20 rounded-lg bg-default-300" />
+        <div className="h-8 rounded-lg bg-default-300" />
       </Skeleton>
-      <div className="space-y-3">
+      <div className="space-y-4">
         <Skeleton className="w-3/5 rounded-lg">
-          <div className="h-8 w-3/5 rounded-lg bg-default-200" />
+          <div className="h-24 w-3/5 rounded-lg bg-default-200" />
         </Skeleton>
         <Skeleton className="w-4/5 rounded-lg">
           <div className="h-8 w-4/5 rounded-lg bg-default-200" />

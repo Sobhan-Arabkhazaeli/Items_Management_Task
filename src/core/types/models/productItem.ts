@@ -1,6 +1,6 @@
 export interface IProductItem {
-  id: string;          
+  id?: string | number ;          
   title: string;     
   subtitle: string;    
-  dateCreated: string;  
+  dateCreated?: string | undefined;  
 }
