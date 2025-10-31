@@ -1,21 +1,11 @@
-import { Button } from "@heroui/react";
 import { Navbar } from "../../../common";
-// icons
-import { CiCirclePlus } from "react-icons/ci";
+import AddProductButton from "./AddProductButton";
 
 const MenuBox = () => {
   return (
-    <div className=" h-3/4 gap-24 chip-primary">
+    <div className="h-14 gap-8 px-8 py-3 flex items-center justify-between backdrop-blur-xl bg-surface/80 border border-border rounded-xl shadow-md  transition-shadow duration-300">
       <Navbar />
-      <Button
-        className="bg-surface text-white"
-        startContent={<CiCirclePlus size={"25px"} />}
-        variant="solid"
-        size="sm"
-        radius="lg"
-      >
-        Add Product
-      </Button>
+      <AddProductButton />
     </div>
   );
 };
