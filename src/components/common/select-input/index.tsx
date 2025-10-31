@@ -1,6 +1,6 @@
 import { Select, SelectItem } from "@heroui/react";
 
-interface IBaseSelectProps<T> {
+interface IBaseSelectProps<T extends string | number | undefined> {
   label: string;
   value: T;
   options: { key: string | number; label: string }[];
@@ -8,9 +8,6 @@ interface IBaseSelectProps<T> {
   className?: string;
 }
 
-/**
- * @component BaseSelect
- */
 const BaseSelect = <T extends string | number | undefined>({
   label,
   value,
@@ -21,20 +18,30 @@ const BaseSelect = <T extends string | number | undefined>({
   return (
     <Select
       label={label}
-      selectedKeys={[String(value)]}
+      // selectedKeys expects an iterable (like Set or string[])
+      selectedKeys={value ? [String(value)] : []}
       className={`max-w-xs w-36 ${className || ""}`}
-      onChange={(e) => onChange(e.target.value as T)}
+      // use onSelectionChange instead of onChange
+      onSelectionChange={(keys) => {
+        const selected = Array.from(keys)[0] as string;
+        onChange(selected as T);
+      }}
       variant="bordered"
       radius="lg"
       classNames={{
-        base: "bg-primary rounded-xl text-text-secondary",
-        listbox: "bg-bg",
-        trigger:
-          "shadow-sm border border-gray-300 dark:border-gray-700 hover:border-indigo-400 focus:border-indigo-500",
+        base: "text-text",
+        label: "text-text-secondary font-medium",
+        trigger: "hover:bg-primary/10 transition-all duration-300 rounded-lg",
+        listbox: "backdrop-blur-xl bg-surface/80 rounded-lg",
+        popoverContent: "backdrop-blur-xl bg-surface/70 rounded-lg",
+        selectorIcon: "text-primary",
       }}
     >
       {options.map((opt) => (
-        <SelectItem key={opt.key} value={String(opt.key)}>
+        <SelectItem
+          key={String(opt.key)}
+          className="hover:bg-primary/20 rounded-md transition-all duration-200"
+        >
           {opt.label}
         </SelectItem>
       ))}
