@@ -2,7 +2,7 @@
 
  ## Built with ❤️ for SavvyTech Team
 
-A modern, full-featured Product Management Interface built with **React + TypeScript**, featuring real-time CRUD operations, product comparisons, advanced filtering, and a beautiful glassmorphism UI design.
+A modern, full-featured Product Management Interface built with **React + TypeScript**, featuring real-time CRUD operations, product comparisons, advanced filtering, and a beautiful UI design.
 
 ![React](https://img.shields.io/badge/React-18.2.0-blue)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-blue)
@@ -258,8 +258,8 @@ npm run preview
 
 ## 🎨 UI Features
 
-### Glassmorphism Design
-The application features a modern glassmorphism design with:
+### modern Design
+The application features a modern design with:
 - Backdrop blur effects
 - Semi-transparent backgrounds
 - Multi-layer shadows
