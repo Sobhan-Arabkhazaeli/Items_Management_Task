@@ -1,5 +1,7 @@
 # ITEMS-MANAGEMENT-TASK
 
+ ## Built with ❤️ for SavvyTech Team
+
 A modern, full-featured Product Management Interface built with **React + TypeScript**, featuring real-time CRUD operations, product comparisons, advanced filtering, and a beautiful glassmorphism UI design.
 
 ![React](https://img.shields.io/badge/React-18.2.0-blue)
@@ -306,32 +308,18 @@ The application connects to a real backend with:
 - Loading states
 - Optimistic updates
 
-## 🤝 Contributing
-
-We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
-
-1. Fork the project
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## 👨‍💻 Author
 
-**Your Name**
-- GitHub: [@yourusername](https://github.com/yourusername)
-- Portfolio: [yourportfolio.com](https://yourportfolio.com)
-
-## 🙏 Acknowledgments
-
-- Icons provided by [React Icons](https://react-icons.github.io/react-icons/)
-- UI components by [HeroUI](https://heroui.com/)
-- Glassmorphism inspiration from modern design trends
+**Sobhan ArabKhazaeli**
+- Developed for SavvyTech Team
+- Built with React.js and TypeScript
 
 ---
+## 🆘 Support
+
+**For support and questions:**
+
+ - Create an issue in the repository
+ - Check the documentation
 
 **⭐ Star this repo if you found it helpful!**
