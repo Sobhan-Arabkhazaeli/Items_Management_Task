@@ -1,18 +1,14 @@
 import type { FC } from "react";
 import type { IProductCardProps } from ".";
-import { formatDate } from "../../../core/utils/format-date";
-import { Tooltip } from "@heroui/react";
+import ActionButtons from "./CardButtons";
+import CompareToggleButton from "../CompareToggleButton";
 
-const CardFooter: FC<IProductCardProps> = ({ item }) => {
-  // Destructuring the user properties
-  const { dateCreated } = item;
+const CardFooter: FC<IProductCardProps> = ({ item, buttonsActive = true }) => {
   return (
-    <div className="flex justify-between items-center ">
-      <Tooltip content="Created Date" showArrow={true}>
-        <div className="chip-primary cursor-default">{formatDate(dateCreated)}</div>
-      </Tooltip>
+    <div className="flex justify-between items-center pt-4 border-t border-border transition-all duration-300">
+      {buttonsActive && <CompareToggleButton item={item} /> }
+      {buttonsActive && <ActionButtons item={item} /> }
     </div>
   );
 };
-
 export default CardFooter;

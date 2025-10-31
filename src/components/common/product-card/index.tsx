@@ -5,16 +5,16 @@ import CardFooter from "./CardFooter";
 
 export interface IProductCardProps {
   item: IProductItem;
+  buttonsActive?: boolean;
 }
 
-const ProductCard : FC<IProductCardProps> = ({item}) => {
-    
+const ProductCard: FC<IProductCardProps> = ({ item, buttonsActive }) => {
   return (
-    <div className="p-3 flex flex-col justify-between w-96 h-60 card rounded-3xl">
-        <CardHeader item={item}/>
-        <CardFooter item={item}/>
+    <div className="group p-4 border border-border flex flex-col justify-between w-[400px] h-72 rounded-2xl bg-surface shadow-lg transition-all duration-500 hover:scale-[1.02]">
+      <CardHeader item={item}  />
+      <CardFooter item={item} buttonsActive={buttonsActive} />
     </div>
-  )
-}
+  );
+};
 
-export default ProductCard
+export default ProductCard;
