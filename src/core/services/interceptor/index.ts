@@ -1,4 +1,8 @@
-import axios, {AxiosError, type AxiosInstance, type AxiosResponse } from "axios";
+import axios, {
+  AxiosError,
+  type AxiosInstance,
+  type AxiosResponse,
+} from "axios";
 
 // Base URL from environment variable
 const baseURL: string | undefined = import.meta.env.VITE_BASE_URL;
@@ -10,10 +14,10 @@ const instance: AxiosInstance = axios.create({
 
 // Success handler: returns only the response data
 const onSuccess = <T>(response: AxiosResponse<T>): T => {
-  return response;
+  return response.data;
 };
 
-// Error handler: alerts for client errors (4xx) and rejects the promise
+// Error handler: alerts for client errors and rejects the promise
 const onError = (error: AxiosError): Promise<never> => {
   if (error.response) {
     const status = error.response.status;
@@ -32,4 +36,3 @@ const onError = (error: AxiosError): Promise<never> => {
 instance.interceptors.response.use(onSuccess, onError);
 
 export default instance;
-
