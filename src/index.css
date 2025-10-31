@@ -11,74 +11,111 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
 }
-html, body {
-  overflow-x: hidden;
 
+html {
+  overflow-x: hidden;
 }
+
+
+/* list of fonts  */
+@font-face {
+  font-family: 'Satoshi-Light';
+  src: url('./assets/fonts/Satoshi-Light.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Satoshi-Bold';
+  src: url('./assets/fonts/Satoshi-Bold.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
 
 /* custom colors for multi-theme */
 @theme {
   --color-bg: var(--bg);
+  --color-surface: var(--surface);
   --color-text: var(--text);
   --color-text-secondary: var(--text-secondary);
   --color-primary: var(--primary);
-  --color-surface: var(--surface);
+  --color-danger: var(--danger);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-info: var(--info);
+  --color-border: var(--border);
 }
+
+/* Light Theme */
 :root {
   --bg: #ffffff;
-  --text: #000;
+  --surface: #f9fafb;
+  --text: #111827;
   --text-secondary: #707070;
-  --primary: #e9e8e8;
-  --surface: #FF5A5A;
+  --primary: #5810af;
+  --danger: #ed424a;
+  --success: #00c950;
+  --warning: #f59e0b;
+  --info: #3b82f6;
+  --border: #e5e7eb;
 }
 
+/* Dark Theme */
 [data-theme="dark"] {
-  --bg: #0b1220;
+  --bg: #15171a;
+  --surface: #1f2125;
   --text: #fbfcfe;
   --text-secondary: #a1a1a1;
-  --primary: #48494a;
-  --surface: #FF5A5A;
+  --primary: #5810af;
+  --danger: #ed424a;
+  --success: #00c950;
+  --warning: #fbbf24;
+  --info: #60a5fa;
+  --border: #2f3238;
 }
 
-h1{
-  @apply text-text font-bold text-lg 
-}
-p{
-  @apply text-text-secondary text-sm
-}
+
+
 
 /* custom classes using layer utilities */
 @layer utilities {
   .chip-primary {
-    @apply p-1.5 bg-primary flex items-center rounded-3xl;
+    @apply p-1.5 bg-surface flex items-center rounded-2xl;
   }
 
-  /* Light Mode */
-.card {
-  background: linear-gradient(145deg, #f6f6f6a7, #ffffffb1);
-  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1), -3px -3px 8px rgba(255, 255, 255, 0.2);
-  transition: 1s;
+  .error-text {
+    @apply text-red-500 text-xs;
+  }
+
+  /* fonts */
+  .font-Satoshi-Light {
+    font-family: 'Satoshi-Light', ui-sans-serif, system-ui;
+  }
+
+  .font-Satoshi-Bold {
+    font-family: 'Satoshi-Bold', ui-sans-serif, system-ui;
+  }
+
+
+  /* Smooth backdrop transitions */
+  .backdrop-blur-xl {
+    transition: backdrop-filter 0.3s ease;
+  }
 }
 
-.card:hover {
-  background: linear-gradient(145deg, #ffffffb6, #f1f1f1b9);
-  box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.2), -3px -3px 12px rgba(255, 255, 255, 0.3);
-  transform: scale(1.1);
+h1 {
+  font-family: 'Satoshi-Bold', ui-sans-serif, system-ui;
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: var(--text);
 }
 
-  /* Dark Mode */
-.dark .card {
-  background: linear-gradient(145deg, #2c3e50b9, #475563b6);
-  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.6), -3px -3px 8px rgba(255, 255, 255, 0.1);
-  transition: 1s;
+p {
+  font-family: 'Satoshi-Light', ui-sans-serif, system-ui;
+  font-weight: 400;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
 }
-
-.dark .card:hover {
-  background: linear-gradient(145deg, #34495eba, #2c3e50b6);
-  box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.8), -3px -3px 12px rgba(255, 255, 255, 0.3);
-  transform: scale(1.1);
-
-}
-}
-
-
