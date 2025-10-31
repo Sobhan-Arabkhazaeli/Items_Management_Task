@@ -1,4 +1,3 @@
-// ** React Imports
 import { lazy } from "react";
 
 // ** Third Party Components
