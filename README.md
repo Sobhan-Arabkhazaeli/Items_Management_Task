@@ -1,6 +1,5 @@
 # ITEMS-MANAGEMENT-TASK
 
- ## Built with ❤️ for SavvyTech Team
 
 A modern, full-featured Product Management Interface built with **React + TypeScript**, featuring real-time CRUD operations, product comparisons, advanced filtering, and a beautiful UI design.
 
@@ -311,7 +310,6 @@ The application connects to a real backend with:
 ## 👨‍💻 Author
 
 **Sobhan ArabKhazaeli**
-- Developed for SavvyTech Team
 - Built with React.js and TypeScript
 
 ---
